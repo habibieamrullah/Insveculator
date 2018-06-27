@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Insveculator by Zofia Kreasi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<style>
+			body {
+				margin: 0px;
+				padding: 10px;
+				padding-left: 45px;
+				font-family: arial;
+				font-size: 12px;
+				color: lime;
+				background-color: #000f02;
+			}
+			h1, h2, h2, h4, h5, p {
+				margin: 0px;
+				padding-bottom: 5px;
+			}
+			#shownStock {
+				display: none;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(0, 0, 0, .90);
+				padding: 20px;
+				color: lime;
+			}
+			#buttonBar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				background-color: black;
+				border-right: 1px solid #003a07;
+				padding: 5px;
+			}
+			.blockList{
+				border: 1px solid lime;
+				padding: 5px;
+				margin-bottom: 5px;
+				border-radius: 3px;
+			}
+			button{
+				background-color: black;
+				color: lime;
+				border: 1px solid lime;
+				border-radius: 3px;
+				padding: 5px;
+				margin-bottom: 5px;
+			}
+			hr{
+				border: 1px solid #003a07;
+				margin-bottom: 20px;
+			}
+			input{
+				width: 30%;
+				padding: 5px;
+				border: 1px solid lime;
+				color: lime;
+				background-color: black;
+				border-radius: 5px;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="buttonBar">
+			<button onclick="gotoSummary()">S</button><br/>
+			<button onclick="gotoCompanies()">C</button><br/>
+			<button onclick="gotoTrades()">T</button><br/>
+			<button onclick="gotoSettings()">S</button><br/>
+			<button onclick="showAll()">A</button><br/>
+		</div>
+		<div id="summary">
+			<h2>Summary:</h2>
+			<p>Loading...</p>
+			<hr />
+		</div>
+		
+		<div id="companies">
+			<h2>Companies list:</h2>
+			<p>Loading...</p>
+			<hr />
+		</div>
+		
+		<div id="trades">
+			<h2>Your trades:</h2>
+			<p>Loading...</p>
+			<hr />
+		</div>
+		
+		<div id="settings">
+			<h2>Settings</h2>
+			<p>Text size</p>
+			<p><button onclick="biggerText()">Increase</button> <button onclick="smallerText()">Decrease</button></p>
+			<p>Reset game</p>
+			<p><button onclick="resetGame()">Reset Game Data</button></p>
+			<hr />
+		</div>
+		
+		<div style="padding: 20px; font-size: 10px; text-align: center;">
+			<h2>INSVECULATOR</h2>
+			<p><img src="zklogo.png" width="24px" /></p>
+			<p>Stock trading game by Zofia Kreasi</p>
+			<p>Coded by Habibie</p>
+			<p>http://zofiakreasi.com/</p>
+			<p>habibieamrullah@gmail.com</p>
+		</div>
+		
+		<div id="shownStock">
+			<h2 id="stockName" align="center">Current Stock:</h2>
+			<div id="fxChart" style="border: 1px solid lime; margin-bottom: 20px;"></div>
+			<p align="center"><input id="invAmmount" placeholder="Enter investment ammount" /></p>
+			<p align="center"><button onclick="invest()">Invest</button> <button onclick="closeShownStock()">Close</button></p>
+		</div>
+		<script src="zkCharts.js"></script>
+		<script src="insveculator.js"></script>
+	</body>
+</html>
